@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Futurista</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animación carrito */
+    .slide-in {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .slide-in.active {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-lg z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-5">
+      <h1
+        class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+        ✦ FutureWear
+      </h1>
+      <nav class="space-x-6 text-gray-300 flex items-center">
+        <a href="#" class="hover:text-cyan-400 transition">Inicio</a>
+        <a href="./catalogo/catalogo.html" class="hover:text-cyan-400 transition">Colección</a>
+        <a href="#" class="hover:text-cyan-400 transition">Ofertas</a>
+        <button id="loginBtn"
+          class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-purple-600 hover:scale-105 transition">Iniciar
+          Sesión</button>
+        <button id="cartBtn"
+          class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:scale-105 transition">🛒
+          Carrito</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section
+    class="h-[70vh] flex flex-col justify-center items-center text-center px-6 bg-[url('/assets/img/ropa.jpg')] bg-cover bg-center relative mt-16 fade-in">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <h2 class="relative text-4xl md:text-6xl font-extrabold mb-4">Colección Futurista 2025</h2>
+    <p class="relative text-gray-300 text-lg max-w-lg">Prendas modernas, minimalistas y únicas para destacar tu estilo.
+    </p>
+    <button
+      class="relative mt-6 bg-gradient-to-r from-cyan-600 to-purple-600 px-6 py-3 rounded-lg hover:scale-105 transition text-white font-semibold">
+      Explorar Ahora
+    </button>
+  </section>
+
+  <!-- Productos -->
+  <section class="max-w-6xl mx-auto p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 fade-in">
+    <div class="bg-gray-800/60 backdrop-blur-md rounded-xl p-4 shadow-lg hover:scale-[1.03] transition">
+      <img src="./assets/img/polo.avif" alt="Camiseta" class="rounded-lg mb-4">
+      <h3 class="text-xl font-semibold">Camiseta Neon</h3>
+      <p class="text-cyan-400 text-lg font-bold mt-2">$39.99</p>
+      <button
+        class="mt-3 w-full bg-gradient-to-r from-cyan-600 to-purple-600 py-2 rounded-lg hover:scale-105 transition add-to-cart"
+        data-name="Camiseta Neon" data-price="39.99">Agregar al carrito</button>
+    </div>
+
+    <div class="bg-gray-800/60 backdrop-blur-md rounded-xl p-4 shadow-lg hover:scale-[1.03] transition">
+      <img src="./assets/img/pantalon.webp" alt="Pantalón" class="rounded-lg mb-4">
+      <h3 class="text-xl font-semibold">Pantalón Futurista</h3>
+      <p class="text-cyan-400 text-lg font-bold mt-2">$59.99</p>
+      <button
+        class="mt-3 w-full bg-gradient-to-r from-cyan-600 to-purple-600 py-2 rounded-lg hover:scale-105 transition add-to-cart"
+        data-name="Pantalón Futurista" data-price="59.99">Agregar al carrito</button>
+    </div>
+
+    <div class="bg-gray-800/60 backdrop-blur-md rounded-xl p-4 shadow-lg hover:scale-[1.03] transition">
+      <img src="./assets/img/chaqueta.webp" alt="Chaqueta" class="rounded-lg mb-4">
+      <h3 class="text-xl font-semibold">Chaqueta Cyberpunk</h3>
+      <p class="text-cyan-400 text-lg font-bold mt-2">$89.99</p>
+      <button
+        class="mt-3 w-full bg-gradient-to-r from-cyan-600 to-purple-600 py-2 rounded-lg hover:scale-105 transition add-to-cart"
+        data-name="Chaqueta Cyberpunk" data-price="89.99">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900/80 py-6 text-center text-gray-400 mt-10">
+    © 2025 FutureWear - Diseñado con Tailwind CSS
+  </footer>
+
+  <script src="./modal/modal.js"></script>
+  <script src="../carrito/carrito.js"></script>
+
+</body>
+</html>

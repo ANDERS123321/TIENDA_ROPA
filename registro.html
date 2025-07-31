@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - FutureWear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex justify-center items-center px-4 relative">
+    <!-- Fondo con imagen -->
+    <div class="absolute inset-0 bg-[url('/assets/img/ropa_login.jpg')] bg-cover bg-center"></div>
+    <!-- Overlay oscuro para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+    <!-- Contenido (formulario) -->
+    <div class="relative z-10 bg-gray-800/80 backdrop-blur-lg rounded-xl shadow-lg p-8 w-full max-w-md fade-in">
+        <h2
+            class="text-3xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Crear Cuenta
+        </h2>
+        <p class="text-gray-400 text-center mb-6">Únete a la moda futurista de FutureWear 🚀</p>
+
+        <!-- Formulario -->
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-gray-300 mb-1">Nombre completo</label>
+                <input type="text" name="nombre" required
+                    class="w-full p-2 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-1">Correo electrónico</label>
+                <input type="email" name="email" required
+                    class="w-full p-2 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-1">Contraseña</label>
+                <input type="password" name="password" required
+                    class="w-full p-2 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-1">Confirmar contraseña</label>
+                <input type="password" name="confirm_password" required
+                    class="w-full p-2 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+            </div>
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-cyan-600 to-purple-600 py-2 rounded-lg hover:scale-105 transition">
+                Registrarme
+            </button>
+        </form>
+
+        <p class="text-gray-400 mt-4 text-center">
+            ¿Ya tienes cuenta?
+            <a href="index.html" class="text-cyan-400 hover:underline">Inicia sesión</a>
+        </p>
+    </div>
+</body>
+
+</html>

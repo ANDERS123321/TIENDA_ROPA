@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - FutureWear</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 0.7s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-lg z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-5">
+      <h1 class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+        ✦ FutureWear
+      </h1>
+      <nav class="space-x-6 text-gray-300 flex items-center">
+        <a href="../index.html" class="hover:text-cyan-400 transition">Inicio</a>
+        <a href="catalogo.html" class="text-cyan-400 font-semibold">Colección</a>
+        <a href="#" class="hover:text-cyan-400 transition">Ofertas</a>
+        <button id="loginBtn"
+          class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-purple-600 hover:scale-105 transition">Iniciar
+          Sesión</button>
+        <button id="cartBtn"
+          class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:scale-105 transition">🛒
+          Carrito</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección de búsqueda y filtros -->
+  <section class="max-w-6xl mx-auto pt-24 px-6">
+    <h2 class="text-3xl font-bold mb-6 text-center">Explora nuestra colección futurista</h2>
+
+    <!-- Buscador -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+      <input type="text" id="searchInput" placeholder="Buscar productos..." class="flex-1 p-3 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+      <select id="filterCategory" class="p-3 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+        <option value="todos">Todas las categorías</option>
+        <option value="camiseta">Camisetas</option>
+        <option value="pantalon">Pantalones</option>
+        <option value="chaqueta">Chaquetas</option>
+      </select>
+      <select id="filterPrice" class="p-3 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-cyan-400">
+        <option value="todos">Precio</option>
+        <option value="bajo">Menor a $50</option>
+        <option value="medio">$50 - $80</option>
+        <option value="alto">Mayor a $80</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Lista de productos -->
+  <section id="productList" class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 fade-in">
+    <!-- Los productos se generan con JS -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900/80 py-6 text-center text-gray-400 mt-10">
+    © 2025 FutureWear - Diseñado con Tailwind CSS
+  </footer>
+  
+  <script src="./catalogo.js"></script>
+  <script src="../modal/modal.js"></script>
+
+</body>
+</html>
