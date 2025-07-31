@@ -1,6 +1,6 @@
 // cart.js
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("../carrito/carrito.html")
+  fetch("../carrito.html")
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML("beforeend", html);
